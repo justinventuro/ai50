@@ -4,8 +4,8 @@ import os
 import string
 import sys
 
-FILE_MATCHES = 1
-SENTENCE_MATCHES = 2
+FILE_MATCHES = 4
+SENTENCE_MATCHES = 1
 
 
 def main():
@@ -21,6 +21,7 @@ def main():
         for filename in files
     }
     file_idfs = compute_idfs(file_words)
+
 
     # Prompt user for query
     query = set(tokenize(input("Query: ")))
@@ -89,6 +90,7 @@ def compute_idfs(documents):
     resulting dictionary.
     """
 
+
     idfs = dict()
     words = set()
 
@@ -145,7 +147,7 @@ def top_sentences(query, sentences, idfs, n):
 
         for word in query:
             if word in sentences[sentence]:
-                #matvhing word measure (mwm)
+                #matching word measure (mwm)
                 values[1] += idfs[word]
                 #query term density
                 values[2] += sentences[sentence].count(word)/ len(sentences[sentence])
