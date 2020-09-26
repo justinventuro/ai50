@@ -1,3 +1,6 @@
+Requirements:
+https://cs50.harvard.edu/ai/2020/projects/5/traffic/
+
 _Test 1:_ (same as handwriting)     
 tf.keras.layers.Conv2D(
             32, (3, 3), activation="relu", input_shape=(IMG_WIDTH, IMG_HEIGHT, 3)
